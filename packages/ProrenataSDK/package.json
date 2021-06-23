@@ -3,15 +3,20 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "./lib/index.js",
+  "workspaces": [
+    "packages/*"
+  ],
   "bin": {
     "ProrenataSDK": "./bin/global.js"
   },
   "scripts": {
-    "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
-    "prepublish": "npm run tsc"
+    "watch": "yarn run nodemon src/index.ts ",
+    "build": " yarn run tsc --project ./"
   },
   "devDependencies": {
     "@types/node": "^15.12.4",
-    "openapi-typescript": "^4.0.1"
+    "openapi-typescript": "^4.0.1",
+    "typescript": "^4.0.2"
+
   }
 }
