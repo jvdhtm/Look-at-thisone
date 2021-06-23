@@ -1,6 +1,17 @@
 {
   "name": "ProrenataSDK",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "bin": {
+    "ProrenataSDK": "./bin/global.js"
+  },
+  "scripts": {
+    "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "prepublish": "npm run tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.4",
+    "openapi-typescript": "^4.0.1"
+  }
 }

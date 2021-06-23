@@ -1,0 +1,180 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /NewRecord/:
+    get:
+      operationId: listNew_Records
+      description: ''
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=4
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?page=2
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/NewRecords'
+          description: ''
+      tags:
+      - NewRecord
+    post:
+      operationId: createNew_Records
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewRecords'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/NewRecords'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/NewRecords'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewRecords'
+          description: ''
+      tags:
+      - NewRecord
+  /NewRecord/{id}/:
+    get:
+      operationId: retrieveNew_Records
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this new_ records.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewRecords'
+          description: ''
+      tags:
+      - NewRecord
+    put:
+      operationId: updateNew_Records
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this new_ records.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewRecords'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/NewRecords'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/NewRecords'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewRecords'
+          description: ''
+      tags:
+      - NewRecord
+    patch:
+      operationId: partialUpdateNew_Records
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this new_ records.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewRecords'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/NewRecords'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/NewRecords'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewRecords'
+          description: ''
+      tags:
+      - NewRecord
+    delete:
+      operationId: destroyNew_Records
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this new_ records.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - NewRecord
+components:
+  schemas:
+    NewRecords:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 60
+        time:
+          type: string
+          format: date-time
+          nullable: true
+        date:
+          type: string
+          format: date
+          nullable: true
+      required:
+      - name
