@@ -1,0 +1,12 @@
+{
+  "name": "ProrenataSDK",
+  "version": "1.0.0",
+  "description": "proof of concept",
+  "main": "index.js",
+  "repository": "git@github.com:jvdhtm/Look-at-thisone.git",
+  "author": "jvdhtm <jvdhtm@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
