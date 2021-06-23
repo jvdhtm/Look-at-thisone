@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "proof of concept",
   "main": "index.js",
+  "private": true,
   "repository": "git@github.com:jvdhtm/Look-at-thisone.git",
   "author": "jvdhtm <jvdhtm@gmail.com>",
   "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "lerna": "^4.0.0"
   }

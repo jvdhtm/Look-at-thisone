@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "./lib/index.js",
-  "workspaces": [
-    "packages/*"
-  ],
   "bin": {
     "ProrenataSDK": "./bin/global.js"
   },
